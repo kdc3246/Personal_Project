@@ -1,0 +1,227 @@
+body {
+  font: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #e6e6e6;
+}
+/* 전체영역의 80%만 사용하고 가운데 정렬함. */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.dark {
+  padding: 15px;
+  background-color: #35424a;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Header  */
+header {
+  /*
+  background-color: #35424a;
+  color: white;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
+  */
+  background: rgba(0, 0, 0, 0.2);
+    height: 100px;
+    line-height: 100px;
+
+    /* position : fixed를 쓰면 w100%가 꺠진다. 주의 사항 : 이런 경우 수동으로 작성해줘야한다. */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    /*  이 헤더는 스크롤 내리면 따라다니는 것이기에 다른 이미지에 가려지면 안되니 z-index사용 */
+    z-index: 1000;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+header li {
+  display: inline;
+  padding: 0 10px;
+  float: left;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+/*웹프로그래밍의 웹만 하이라이트로 해준다. 또는 홈으로 부분을 클래스이름 current를 줘서 하이라이트해주었다.*/
+header .highlight,
+header .current a {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #aaaaaa;
+  font-weight: bold;
+}
+
+/* Showcase */
+#showcase {
+  min-height: 400px;
+  background: url('../img/showcase.jpg') no-repeat 0 -400px;
+  text-align: center;
+  color: white;
+}
+
+#showcase h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+#showcase p {
+  font-size: 20px;
+}
+
+/* Newsletter */
+
+#git {
+  background-color: #35424a;
+  padding: 15px;
+  color: white;
+}
+
+#git h1 {
+  float: left;
+}
+
+#git form {
+  float: right;
+  margin-top: 15px;
+}
+
+#git input[type='email'] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+}
+
+.button_1 {
+  width: 250px;
+  height: 38px;
+  background-color: tomato;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 20px;
+  color: white;
+}
+
+/* Boxes 밑에 박스가 움직인다. */
+
+#boxes {
+  margin-top: 20px;
+  margin-left: 65px;
+}
+
+#boxes .box {
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+}
+
+#boxes .highlight {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+#boxes .box img {
+  width: 400px;
+}
+
+/* Sidebar */
+aside#sidebar {
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+}
+
+/* Main-col */
+article#main-col {
+  float: left;
+  width: 65%;
+}
+
+/* Service */
+ul#service li {
+  list-style: none;
+  padding: 20px;
+  border: #cccccc solid 1px;
+  background-color: #e6e6e6;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #35424a;
+  text-align: center;
+}
+
+/* Media Quaries 화면이 줄어들었을때 재조정하는 곳 */
+@media (max-width: 768px) {
+  header #branding,
+  header nav,
+  header nav li,
+  #git h1,
+  #git form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  #showcase h1 {
+    margin-top: 30px;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  header {
+    padding-bottom: 20px;
+  }
+
+  #git button,
+  .quote button,
+  header li {
+    display: block;
+    width: 100%;
+  }
+
+  #git form input[type='email'],
+  .quote input,
+  .quote textarea {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
